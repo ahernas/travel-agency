@@ -13,8 +13,8 @@
     "id": "accommodation",
     "name": "Accommodation",
     "type": "icons",
-    "required": true,
-    "defaultValue": "hotel",
+    "required": false,
+    "defaultValue": "",
     "values": [
       {"id": "hotel", "icon": "h-square", "name": "Hotel room", "price": 0},
       {"id": "suite", "icon": "building", "name": "Suite", "price": 500},
@@ -53,5 +53,20 @@
       "min": 0,
       "max": 6
     }
+  },
+  {
+    "id": "start-date",
+    "name": "Preferred trip start",
+    "type": "date"
+  },
+  {
+    "id": "name",
+    "name": "Your name",
+    "type": "text"
+  },
+  {
+    "id": "contact",
+    "name": "Contact info (phone, email, etc.)",
+    "type": "text"
   }
 ]
