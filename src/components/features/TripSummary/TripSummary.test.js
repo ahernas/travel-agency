@@ -22,7 +22,7 @@ describe('Component TripSummary', () => {
   it('should render correct props name, cost and days', () => {
     const expectedName = 'name';
     const expectedCost = 'cost';
-    const expectedDays = 'days';
+    const expectedDays = 12;
     const component = shallow(<TripSummary name={expectedName} cost={expectedCost} days={expectedDays} image='image.jpg'/>);
 
     expect(component.find('h3').text()).toEqual(expectedName);

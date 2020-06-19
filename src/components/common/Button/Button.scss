@@ -25,3 +25,7 @@
     }
   }
 }
+
+:disabled {
+  background: darken($color-disabled, 5%);
+}
