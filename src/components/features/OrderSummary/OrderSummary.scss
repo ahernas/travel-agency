@@ -2,7 +2,7 @@
 
 .component {
   position: relative;
-  margin: ($base-size * 2) 0;
+  margin-top: $base-size * 2;
   @include p-el('before') {
     content: '';
     width: ($base-size * 4);
@@ -11,4 +11,10 @@
     left: 0;
     background: $color-dark;
   }
+}
+
+.standard {
+  font-size: small;
+  margin-bottom: $base-size * 2;
+  font-weight: lighter;
 }

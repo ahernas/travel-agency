@@ -6,6 +6,7 @@ import settings from '../../../data/settings';
 import {formatPrice} from '../../../utils/formatPrice';
 import {calculateTotal} from '../../../utils/calculateTotal';
 import Button from '../../common/Button/Button';
+import styles from './OrderForm.scss';
 
 import {Row, Col} from 'react-flexbox-grid';
 import OrderOption from '../OrderOption/OrderOption';
@@ -53,7 +54,7 @@ const OrderForm = ({tripCost, tripId, tripName, tripCode, options, setOrderOptio
         );
       })}
 
-      <Col xs={12}>
+      <Col xs={12} className={styles.total}>
         <OrderSummary tripCost={tripCost} options={options}/>
         <Button disabled={!options.name || !options.contact} onClick={() => sendOrder(options, tripCost, tripId, tripName, tripCode)}>Order now!</Button>
       </Col>

@@ -11,9 +11,12 @@ import DetailsImage from '../../common/DetailsImage/DetailsImage';
 import List from '../../common/List/List';
 import ListItem from '../../common/ListItem/ListItem';
 import OrderForm from '../../features/OrderForm/OrderFormContainer';
+import {promoPrice, isPromoNotAvailable} from '../../../utils/promoPrice';
 
 import styles from './Trip.scss';
 import {Grid, Row, Col} from 'react-flexbox-grid';
+import {parseOptionPrice} from '../../../utils/parseOptionPrice';
+import {formatPrice} from '../../../utils/formatPrice';
 
 const Trip = ({error, name, image, cost, days, description, country, intro, id}) => {
 
@@ -35,7 +38,11 @@ const Trip = ({error, name, image, cost, days, description, country, intro, id})
               </div>
               <List variant='light'>
                 <ListItem title={`<strong>Duration:</strong> ${days} days`} icon='calendar-alt' />
-                <ListItem title={`<strong>Price:</strong> from ${cost}`} icon='money-bill-wave' />
+                {!isPromoNotAvailable() ?
+                  <ListItem className='price' title={`<strong>Price:</strong> from ${formatPrice(promoPrice(parseOptionPrice(cost).value))}`} icon='money-bill-wave'/>
+                  :
+                  <ListItem className='price' title={`<strong>Price:</strong> from ${cost}`} icon='money-bill-wave'/>
+                }
               </List>
             </Col>
           </Row>
